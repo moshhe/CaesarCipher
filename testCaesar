@@ -1,0 +1,10 @@
+public void testCaesar(){
+  int key = 17;
+  FileResource fr = new FileResource();
+  String message = fr.asString();
+  String encrypted = encrypt(message, key);
+  System.out.println(encrypted);
+  String decrypted = encrypt(encrypted, 26-key);
+  System.out.println(decrypted);
+}
+//Use the file message1.txt
