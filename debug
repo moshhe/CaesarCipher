@@ -1,0 +1,9 @@
+/**
+Code only works with capital letters, not lowercase
+Try changing code in following ways:
+
+- "currentChar = encrypted.charAt(i).toUpperCase;"
+OR
+- make String alphabet = "(A-Z and a-z)"
+  - encrypted message's key may need to be changed to 52, but since the code will look only for the character's case, it will stay within the same case
+*/
