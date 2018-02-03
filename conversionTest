@@ -1,0 +1,10 @@
+public void conversionTest(){
+  String example = "ABCDEFabcdef123!@#";
+    for(int k = 0; k < example.length(); k++){
+      char character = example.charAt(k);
+      char characterUp = Character.toUpperCase(character);
+      char characterLo = Character.toLowerCase(character);
+      System.out.println(character + " " + characterUp + " " + characterLo);
+    }
+  }
+}
