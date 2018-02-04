@@ -1,3 +1,19 @@
+public class CaesarCipher{
+  public String encrypt (String input, int key){
+    StringBuilder encr = new StringBuilder(input);
+    String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    String shiftedAlphabet = " alphabet.substring(key) + alphabet.substring(0,key);
+      for(int = 0; i < encr.length(); i++){
+        char currentChar = encr.charAt(i);
+        int index = alphabet.indexOf(currentChar);
+          if(index!=1){
+          char newChar = shiftedAlphabet.charAt(index);
+          encr.setCharAt(i, newChar);
+      }
+   }
+ return encr.toString();
+}
+
 public void testCaesar(){
   int key = 17;
   FileResource fr = new FileResource();
