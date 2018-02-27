@@ -1,26 +1,49 @@
-public class CaesarCipher{
-  public String encrypt (String input, int key){
-    StringBuilder encr = new StringBuilder(input);
-    String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    String shiftedAlphabet = " alphabet.substring(key) + alphabet.substring(0,key);
-      for(int = 0; i < encr.length(); i++){
-        char currentChar = encr.charAt(i);
-        int index = alphabet.indexOf(currentChar);
-          if(index!=1){
-          char newChar = shiftedAlphabet.charAt(index);
-          encr.setCharAt(i, newChar);
-      }
-   }
- return encr.toString();
-}
+import edu.duke.*;
+import org.apache.commons.csv.*;
 
-public void testCaesar(){
-  int key = 17;
-  FileResource fr = new FileResource();
-  String message = fr.asString();
-  String encrypted = encrypt(message, key);
-  System.out.println(encrypted);
-  String decrypted = encrypt(encrypted, 26-key);
-  System.out.println(decrypted);
+public class CaesarCipher{
+    public String encrypt (String input, int key){
+        input = input.toUpperCase();
+        StringBuilder encr = new StringBuilder(input);
+        String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        String shiftedAlphabet = alphabet.substring(key) + alphabet.substring(0,key);
+            for(int i = 0; i < encr.length(); i++){
+                char currentChar = encr.charAt(i);
+                int index = alphabet.indexOf(currentChar);
+                Character.toUpperCase(currentChar);
+                if(index!=-1){
+                    char newChar = shiftedAlphabet.charAt(index);
+                    encr.setCharAt(i, newChar);
+                }
+            }
+                    return encr.toString();
+        }
+
+    public String reverse(String s){
+        String ret = "";
+        for(int k = 0; k < s.length(); k += 1){
+            ret = s.charAt(k) + ret;
+        }
+        return ret;
+    }
+
+    public void conversionTest(){
+        String example = "ABCDEFabcdef123!@#";
+        for(int k = 0; k < example.length(); k++){
+            char character = example.charAt(k);
+            char characterUp = Character.toUpperCase(character);
+            char characterLo = Character.toLowerCase(character);
+            System.out.println(character + " " + characterUp + " " + characterLo);
+        }
+    }
+
+    public void testCaesar(){
+        int key = 17;
+        FileResource fr = new FileResource();
+        String message = fr.asString();
+        String encrypted = encrypt(message, key);
+        System.out.println(encrypted);
+        String decrypted = encrypt(encrypted,26-key);
+        System.out.println(decrypted);
+    }
 }
-//Use the file message1.txt
