@@ -10,7 +10,6 @@ public class CaesarCipher{
             for(int i = 0; i < encr.length(); i++){
                 char currentChar = encr.charAt(i);
                 int index = alphabet.indexOf(currentChar);
-                Character.toUpperCase(currentChar);
                 if(index!=-1){
                     char newChar = shiftedAlphabet.charAt(index);
                     encr.setCharAt(i, newChar);
@@ -26,7 +25,13 @@ public class CaesarCipher{
         }
         return ret;
     }
-
+    
+    public void testReverseString(){
+        String s = "pit";
+        String backward = reverse(s);
+        System.out.println(backward);
+    }
+    
     public void conversionTest(){
         String example = "ABCDEFabcdef123!@#";
         for(int k = 0; k < example.length(); k++){
@@ -36,7 +41,7 @@ public class CaesarCipher{
             System.out.println(character + " " + characterUp + " " + characterLo);
         }
     }
-
+ 
     public void testCaesar(){
         int key = 17;
         FileResource fr = new FileResource();
